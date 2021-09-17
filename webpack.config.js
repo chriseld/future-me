@@ -25,7 +25,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Output Management',
-      title: 'Progressive Web Application',
+      title: 'Future Me',
      }),
     new WorkboxPlugin.GenerateSW({
       // these options encourage the ServiceWorkers to get in there fast
