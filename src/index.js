@@ -22,6 +22,7 @@ function component() {
     // Add the image to our existing div.
     const myLogo = new Image();
     myLogo.src = Logo;
+    myLogo.width = 500;
 
     element.appendChild(myLogo);
   
