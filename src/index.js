@@ -1,6 +1,16 @@
 import _ from 'lodash';
 import './style.css';
-import Logo from './logo.png';
+import Logo from './img/logo-lg.png';
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('../dist/service-worker.js').then(registration => {
+        console.log('SW registered: ', registration);
+      }).catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+      });
+   });
+}
 
 function component() {
     const element = document.createElement('div');
