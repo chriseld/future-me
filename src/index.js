@@ -12,21 +12,8 @@ if ('serviceWorker' in navigator) {
    });
 }
 
-function component() {
-    const element = document.createElement('div');
+if(!localStorage.getItem("hasProfile")) {
   
-    // Lodash, now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
-
-    // Add the image to our existing div.
-    const myLogo = new Image();
-    myLogo.src = Logo;
-    myLogo.width = 500;
-
-    element.appendChild(myLogo);
-  
-    return element;
+} else {
+  //do other stuff
 }
-
-document.body.appendChild(component());
