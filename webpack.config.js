@@ -1,5 +1,5 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const {InjectManifest} = require('workbox-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
@@ -29,8 +29,8 @@ module.exports = {
     new RobotstxtPlugin,
     new FaviconsWebpackPlugin('./src/img/favicon.png'),
     new HtmlWebpackPlugin({
-      title: 'Output Management',
       title: 'Future Me',
+      template: 'src/index.html',
      }),
     new WorkboxPlugin.GenerateSW({
       // these options encourage the ServiceWorkers to get in there fast
