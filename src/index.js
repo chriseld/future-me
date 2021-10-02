@@ -22,6 +22,8 @@ function clearModal() {
   }
 }
 
+setContent();
+
 function loadProfile() {
   if(!localStorage.getItem("hasProfile")) {
     createProfile();
@@ -69,6 +71,27 @@ function createProfile() {
 
   localStorage.setItem("hasProfile", true);
   loadProfile();
+  setContent();
+}
+
+function setContent() {
+  if(!localStorage.getItem("hasProfile")) {
+    document.getElementById("main").append("Click the happy inkwell to get started!");
+  } else {
+    while (document.getElementById("main").firstChild) {
+      document.getElementById("main").removeChild(document.getElementById("main").firstChild);
+    };
+    let btn = document.createElement("input");
+    btn.setAttribute("type", "button");
+    btn.setAttribute("id", "messageBtn");
+    btn.setAttribute("onclick", "messageControl()");
+    btn.setAttribute("value", "Click to set a message for future you!");
+    document.getElementById("main").append(btn);
+  }
+}
+
+function messageControl() {
+  //add this next
 }
 
 document.getElementById("logo").addEventListener("click", function() {
